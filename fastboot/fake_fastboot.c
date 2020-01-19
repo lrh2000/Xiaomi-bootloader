@@ -7,7 +7,7 @@
 
 void dump_file(FILE *log, const char *filename)
 {
-  FILE *fp = fopen(filename, "r");
+  FILE *fp = fopen(filename, "rb");
   int c;
 
   if (!fp) {
@@ -89,7 +89,7 @@ int fake_fastboot(FILE *log, char **arg, int len)
 
 int main(int argc, char **argv)
 {
-  FILE *log = fopen("fastboot_log", "a");
+  FILE *log = fopen("fastboot_log", "ab");
   char *real_arg[3];
   int len = 0;
   int err;
